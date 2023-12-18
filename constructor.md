@@ -68,6 +68,7 @@ force the subclass who inhereits it, must implement that function
 ### visbility
 可见性并不会对程序的运行状况和程序性能产生影响
 private -- class default  --- only this enity can visit, ecpect for the friend element
+
 protecd -- all subclass and the base class itself
 public  --- struct default
 
@@ -80,7 +81,16 @@ public  --- struct default
 ????
 
 
+### copying and copy constructors
+memcpy, strcpy---includes the null termination character
+### shallow copy
+指针都是用的同一个, 都是指向的同一片内存, 析构的时候就会产生问题
 
+### deep copy
+采用不同的指针指向不同的内存地址
+
+为防止不必要的拷贝, 尽量多用 const varibale&
+**always pass your objects by const reference**
 
 
 

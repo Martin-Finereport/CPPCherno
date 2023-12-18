@@ -37,3 +37,42 @@ int main() {
     player.speed = 0.5;
     player.Move(1, -1);
 }
+
+// 类的初始化
+class EntityClass
+{
+private:
+    std::string m_Nmae;
+public:
+    EntityClass():m_Nmae("unknow")
+    {     
+    };
+    EntityClass(std::string& name):m_Nmae(name)
+    {
+    };
+    std::string GetName() const
+    {
+        return m_Nmae;
+    }
+};
+
+// 栈
+void function() {
+    EntityClass p;  // 此时已经初始化了, 相当于 EntityClass p = EntityClass();
+    EntityClass* e;
+    {
+        std::string name = "eawea";
+        EntityClass p(name); //
+        e = &p;
+        std::cout << p.GetName() << std::endl;
+    }// 到这里 p已经跟随scope销毁了, e获取的就只是默认构造函数的unknown名字
+
+    {
+        std::string name = "eawea";   
+        EntityClass* p2 = new EntityClass(name); // 开辟堆上的内存, 这里p2是一个指针
+        e = p2;
+        std::cout << p2->GetName() << std::endl; // 指针获取属性 -> 或者 (*p2).GetName()
+    }
+    std::cout << e->GetName() << std::endl;    // 此时还能获取e指向的p2的 name
+    delete e; // 一个new对应一个delete
+}
