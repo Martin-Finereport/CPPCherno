@@ -49,6 +49,8 @@ reference counting --- 引用计数 到0 的时候 就会销毁(也是通过scop
         // 推荐使用make_shared而不是new的原因
         // 性能优化： std::make_shared 在内部进行了优化，它会一次性分配内存来存储对象和控制块
         //（用于跟踪共享指针的引用计数等信息）。而使用 new 创建 std::shared_ptr 时，会分别进行对象和控制块的内存分配，可能导致额外的开销。
+
+        // std::make_shared 提供了强烈的异常安全性。如果在分配对象或控制块的过程中抛出异常，std::make_shared 会确保不会导致内存泄漏。而使用 new 创建 std::shared_ptr 时，如果在分配对象后抛出异常，可能会导致内存泄漏
         e0 = sharedEntity;
         e1 = sharedEntity;
     }// 引用计数减1
