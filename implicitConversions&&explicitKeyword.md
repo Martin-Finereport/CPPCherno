@@ -53,3 +53,14 @@ inside class
 不要在成员函数中, 使用delete this
 
 
+
+### arrow operations
+```
+void arrowFunc()
+{
+    Entity* ptr = new Entity(5);
+    // (*ptr).getName(); //这里的arrow operation就相当于做了解引用
+    ptr->getName();
+}
+```
+

@@ -19,3 +19,5 @@ new调用之后会根据之后的类型分配内存 --- 相当于 (type*)malloc(
 
 placement new --- 决定内存来自哪里
 new(pointer) Type;
+
+

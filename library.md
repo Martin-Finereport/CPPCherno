@@ -1,0 +1,6 @@
+## Static library
+
+
+
+
+## Dynamic library

@@ -15,3 +15,14 @@ lifecycle --- 变量在内存中的存续时间
 scope  --- 能够访问此变量的范围
 
 用处  --- 单例模式
+
+
+
+
+### local scope static
+static 提升的是varibale的lifetime
+```
+
+
+
+```
