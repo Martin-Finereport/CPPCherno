@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <array>
 #include <vector>
 struct Vertex
 {
@@ -71,6 +72,10 @@ public:
     int GetSize() const {return N;}
 };
 
+void PrintArray(const std::array<int, 5>& data)
+{
+    
+}
 
 int main()
 {

@@ -44,3 +44,17 @@ int main()
     Print<int>(5);
 }
 ```
+
+
+### static array
+```
+#include <array>
+ 
+ std::array<int, 5> // 得规定大小, 并且大小固定, 存储在栈上
+```
+ optional bounds checking--- 取决于当前处于debug模式还是release模式
+ debug模式会指出越界, release模式可能不会检查, 直接复写
+ ![Alt text](image-1.png)
+
+
+ ![Alt text](image-2.png)
